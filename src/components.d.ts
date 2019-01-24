@@ -12,19 +12,30 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface SliderComponent {}
+  interface SliderComponentAttributes extends StencilHTMLAttributes {}
+
   interface WelcomeComponent {}
   interface WelcomeComponentAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
 
   interface StencilIntrinsicElements {
+    'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
+
+  interface HTMLSliderComponentElement extends Components.SliderComponent, HTMLStencilElement {}
+  var HTMLSliderComponentElement: {
+    prototype: HTMLSliderComponentElement;
+    new (): HTMLSliderComponentElement;
+  };
 
   interface HTMLWelcomeComponentElement extends Components.WelcomeComponent, HTMLStencilElement {}
   var HTMLWelcomeComponentElement: {
@@ -33,10 +44,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
 
   interface ElementTagNameMap {
+    'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;
   }
 

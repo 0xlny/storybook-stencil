@@ -18,7 +18,9 @@
     "storybook": "start-storybook -s ./www/build -p 6006",
     "build-storybook": "build-storybook"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@stencil/sass": "^0.1.1"
+  },
   "devDependencies": {
     "@stencil/core": "~0.16.2",
     "@storybook/html": "^4.1.11",

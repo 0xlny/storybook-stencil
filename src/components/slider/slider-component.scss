@@ -1,0 +1,97 @@
+.slider-component {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
+
+  .box-minmax {
+    margin-top: 30px;
+    width: 608px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 300;
+    color: #4285F4;
+    span:first-child {
+      margin-left: 10px;
+    }
+  }
+
+  .rs-range {
+    margin-top: 29px;
+    width: 600px;
+    -webkit-appearance: none;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background-color: rgba(40, 44, 53, 0.24);
+      border-radius: 0px;
+      border: 0px solid #010101;
+    }
+    &::-moz-range-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: #ffffff;
+      border-radius: 0px;
+      border: 0px solid #010101;
+    }
+
+    &::-webkit-slider-thumb {
+      border: 0px solid #4285F4;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      height: 42px;
+      width: 22px;
+      border-radius: 22px;
+      background: #4285F4;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -20px;
+    }
+    &::-moz-range-thumb {
+      border: 0px solid #ffffff;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      height: 42px;
+      width: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 1);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -20px;
+    }
+    &::-moz-focus-outer {
+      border: 0;
+    }
+  }
+  .rs-label {
+    position: relative;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 98px;
+    background: transparent;
+    margin-top: 20px;
+    margin-left: -38px;
+    color: #4285F4;
+    font-size: 28px;
+    font-weight: 300;
+  }
+
+  .rs-label::after{
+    content: '';
+    border: 1px solid rgba(40, 44, 53, 0.24);
+    position: absolute;
+    bottom: 11px;
+    width: 20px;
+  }
+}

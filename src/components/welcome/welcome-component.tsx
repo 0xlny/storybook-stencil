@@ -8,7 +8,7 @@ import { Component } from '@stencil/core';
 export class WelcomeComponent {
   render() {
     return (
-      <div class="welcome-page">
+      <div class="welcome-component">
         <h1>Welcome to lenny.codes storybook</h1>
         <p>
           You'll find here all the codes posted on my Instagram
