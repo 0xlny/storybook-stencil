@@ -9,6 +9,7 @@ You will find all components sources in /src/components
 ### Usage
 ```javascript
 npm install
+npm run build
 npm run storybook
 ```
 
