@@ -12,8 +12,14 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface SliderComponent {}
-  interface SliderComponentAttributes extends StencilHTMLAttributes {}
+  interface SliderComponent {
+    'max': number;
+    'min': number;
+  }
+  interface SliderComponentAttributes extends StencilHTMLAttributes {
+    'max'?: number;
+    'min'?: number;
+  }
 
   interface WelcomeComponent {}
   interface WelcomeComponentAttributes extends StencilHTMLAttributes {}
