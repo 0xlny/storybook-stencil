@@ -15,7 +15,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "storybook": "start-storybook -s ./www/build -p 6006",
+    "storybook": "start-storybook -s ./www/build,./stories -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

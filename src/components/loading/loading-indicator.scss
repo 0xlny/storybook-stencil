@@ -1,0 +1,142 @@
+.loading-indicator {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --color: #9880ff;
+
+  $dotHeight: 10px;
+  $dotRadius: $dotHeight / 2;
+  $dotSpacing: $dotHeight + $dotHeight / 2;
+  $spacing: $dotHeight + 6px;
+  $topPos: $spacing / 2;
+  $leftPos: -9999px;
+  $x1: - $leftPos - $topPos;
+  $x2: - $leftPos - $topPos + $spacing;
+  $y1: 0;
+  $y2: -$spacing;
+
+  width: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text{
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: .37;
+    color: var(--color);
+    font-size: 16px;
+  }
+
+  .wrapper{
+    margin-bottom: 36px;
+  }
+
+  .dot {
+    position: relative;
+    top: $topPos;
+    left: $leftPos;
+    width: $dotHeight;
+    height: $dotHeight;
+    border-radius: 5px;
+
+    box-shadow:
+      $x1 $y2 0 0 var(--color),
+      $x1 $y1 0 0 var(--color),
+      $x2 $y1 0 0 var(--color);
+    animation: dotBricks 2s infinite ease;
+  }
+
+  @keyframes dotBricks {
+    0% {
+      box-shadow:
+        $x1 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color),
+        $x2 $y1 0 0 var(--color);
+    }
+
+    8.333% {
+      box-shadow:
+        $x2 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color),
+        $x2 $y1 0 0 var(--color);
+    }
+
+    16.667% {
+      box-shadow:
+        $x2 $y2 0 0 var(--color),
+        $x1 $y2 0 0 var(--color),
+        $x2 $y1 0 0 var(--color);
+    }
+
+    25% {
+      box-shadow:
+        $x2 $y2 0 0 var(--color),
+        $x1 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color);
+    }
+
+    33.333% {
+      box-shadow:
+        $x2 $y1 0 0 var(--color),
+        $x1 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color);
+    }
+
+    41.667% {
+      box-shadow:
+        $x2 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color);
+    }
+
+    50% {
+      box-shadow:
+        $x2 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color),
+        $x1 $y2 0 0 var(--color);
+    }
+
+    58.333% {
+      box-shadow:
+        $x1 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color),
+        $x1 $y2 0 0 var(--color);
+    }
+
+    66.666% {
+      box-shadow:
+        $x1 $y1 0 0 var(--color),
+        $x2 $y1 0 0 var(--color),
+        $x1 $y2 0 0 var(--color);
+    }
+
+    75% {
+      box-shadow:
+        $x1 $y1 0 0 var(--color),
+        $x2 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color);
+    }
+
+    83.333% {
+      box-shadow:
+        $x1 $y2 0 0 var(--color),
+        $x2 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color);
+    }
+
+    91.667% {
+      box-shadow:
+        $x1 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color),
+        $x2 $y2 0 0 var(--color);
+    }
+
+    100% {
+      box-shadow:
+        $x1 $y2 0 0 var(--color),
+        $x1 $y1 0 0 var(--color),
+        $x2 $y1 0 0 var(--color);
+    }
+  }
+}

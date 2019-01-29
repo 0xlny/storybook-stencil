@@ -5,12 +5,13 @@ import {Component, Element, Prop, State} from '@stencil/core';
   styleUrl: 'slider-component.scss',
   shadow: true
 })
-export class WelcomeComponent {
-  private rangeSlider;
-  private rangeBullet;
+export class SliderComponent {
+  private rangeSlider: any;
+  private rangeBullet: any;
 
-  @Prop() min: number;
-  @Prop() max: number;
+  @Prop() color: string = '#9880ff';
+  @Prop() min: number = 0;
+  @Prop() max: number = 0;
   @State() value: number;
   @Element() private element: HTMLElement;
 
@@ -23,6 +24,8 @@ export class WelcomeComponent {
     this.value = 0;
     this.rangeSlider = this.element.shadowRoot.getElementById("rs-range-line");
     this.rangeBullet = this.element.shadowRoot.getElementById("rs-bullet");
+    this.element.shadowRoot.getElementById('slider-component')
+      .style.setProperty('--color', this.color);
     this.redrawValue();
   }
 
@@ -38,7 +41,7 @@ export class WelcomeComponent {
 
   render() {
     return (
-      <div class="slider-component">
+      <div class="slider-component" id="slider-component">
         <div class="range-slider">
           <span id="rs-bullet" class="rs-label">{this.value}</span>
           <input id="rs-range-line" class="rs-range" type="range" value={this.value} min={this.min} max={this.max} onInput={this.valueChanged}/>

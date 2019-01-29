@@ -9,8 +9,9 @@
 
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
-| `max`    | `max`     |             | `number` | `undefined` |
-| `min`    | `min`     |             | `number` | `undefined` |
+| `color`  | `color`   |             | `string` | `'#9880ff'` |
+| `max`    | `max`     |             | `number` | `0`         |
+| `min`    | `min`     |             | `number` | `0`         |
 
 
 ----------------------------------------------
