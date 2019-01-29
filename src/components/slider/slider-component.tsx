@@ -11,7 +11,7 @@ export class SliderComponent {
 
   @Prop() color: string = '#9880ff';
   @Prop() min: number = 0;
-  @Prop() max: number = 0;
+  @Prop() max: number = 100;
   @State() value: number;
   @Element() private element: HTMLElement;
 
