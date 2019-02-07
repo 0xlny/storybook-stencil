@@ -12,6 +12,15 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface InputTag {
+    'color': string;
+    'placeholder': string;
+  }
+  interface InputTagAttributes extends StencilHTMLAttributes {
+    'color'?: string;
+    'placeholder'?: string;
+  }
+
   interface LoadingIndicator {
     'color': string;
     'text': string;
@@ -38,17 +47,25 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'InputTag': Components.InputTag;
     'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
 
   interface StencilIntrinsicElements {
+    'input-tag': Components.InputTagAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
+
+  interface HTMLInputTagElement extends Components.InputTag, HTMLStencilElement {}
+  var HTMLInputTagElement: {
+    prototype: HTMLInputTagElement;
+    new (): HTMLInputTagElement;
+  };
 
   interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
   var HTMLLoadingIndicatorElement: {
@@ -69,12 +86,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'input-tag': HTMLInputTagElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
 
   interface ElementTagNameMap {
+    'input-tag': HTMLInputTagElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;

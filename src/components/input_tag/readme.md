@@ -1,4 +1,4 @@
-# slider-component
+# input-tag
 
 
 
@@ -10,8 +10,6 @@
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
 | `color`  | `color`   |             | `string` | `'#9880ff'` |
-| `max`    | `max`     |             | `number` | `100`       |
-| `min`    | `min`     |             | `number` | `0`         |
 
 
 ----------------------------------------------

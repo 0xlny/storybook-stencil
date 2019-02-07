@@ -29,3 +29,15 @@ storiesOf('Loading indicators', module)
     compo.setAttribute('text', 'Loading...');
     return compo;
   });
+
+storiesOf('Input', module)
+  .add('Tags', () => {
+    const compo = document.createElement('input-tag');
+    //Those are for position in storybook
+    compo.style.setProperty('margin-left', '50px');
+    compo.style.setProperty('margin-top', '50px');
+    compo.style.setProperty('position', 'absolute');
+    //Those are default values
+    compo.setAttribute('color', '#9880ff');
+    return compo;
+  });
