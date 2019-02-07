@@ -10,7 +10,7 @@
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
 | `color`  | `color`   |             | `string` | `'#9880ff'` |
-| `max`    | `max`     |             | `number` | `0`         |
+| `max`    | `max`     |             | `number` | `100`       |
 | `min`    | `min`     |             | `number` | `0`         |
 
 

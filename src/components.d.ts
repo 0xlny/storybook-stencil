@@ -12,6 +12,17 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface DatePicker {
+    'day': number;
+    'month': number;
+    'year': number;
+  }
+  interface DatePickerAttributes extends StencilHTMLAttributes {
+    'day'?: number;
+    'month'?: number;
+    'year'?: number;
+  }
+
   interface LoadingIndicator {
     'color': string;
     'text': string;
@@ -38,17 +49,25 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DatePicker': Components.DatePicker;
     'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
 
   interface StencilIntrinsicElements {
+    'date-picker': Components.DatePickerAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
+
+  interface HTMLDatePickerElement extends Components.DatePicker, HTMLStencilElement {}
+  var HTMLDatePickerElement: {
+    prototype: HTMLDatePickerElement;
+    new (): HTMLDatePickerElement;
+  };
 
   interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
   var HTMLLoadingIndicatorElement: {
@@ -69,12 +88,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'date-picker': HTMLDatePickerElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
 
   interface ElementTagNameMap {
+    'date-picker': HTMLDatePickerElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;
