@@ -41,3 +41,12 @@ storiesOf('Input', module)
     compo.setAttribute('color', '#9880ff');
     return compo;
   });
+
+storiesOf('Buttons', module)
+  .add('Fill', () => {
+    const compo = document.createElement('fill-button');
+    //Those are default values
+    compo.setAttribute('color', '#9880ff');
+    compo.setAttribute('title', 'Close application!');
+    return compo;
+  });

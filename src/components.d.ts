@@ -12,6 +12,15 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface FillButton {
+    'color': string;
+    'title': string;
+  }
+  interface FillButtonAttributes extends StencilHTMLAttributes {
+    'color'?: string;
+    'title'?: string;
+  }
+
   interface InputTag {
     'color': string;
     'placeholder': string;
@@ -47,6 +56,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'FillButton': Components.FillButton;
     'InputTag': Components.InputTag;
     'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
@@ -54,12 +64,19 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'fill-button': Components.FillButtonAttributes;
     'input-tag': Components.InputTagAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
+
+  interface HTMLFillButtonElement extends Components.FillButton, HTMLStencilElement {}
+  var HTMLFillButtonElement: {
+    prototype: HTMLFillButtonElement;
+    new (): HTMLFillButtonElement;
+  };
 
   interface HTMLInputTagElement extends Components.InputTag, HTMLStencilElement {}
   var HTMLInputTagElement: {
@@ -86,6 +103,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'fill-button': HTMLFillButtonElement
     'input-tag': HTMLInputTagElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
@@ -93,6 +111,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'fill-button': HTMLFillButtonElement;
     'input-tag': HTMLInputTagElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
