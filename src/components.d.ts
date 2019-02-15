@@ -12,6 +12,17 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface BubbleCheckbox {
+    'color': string;
+    'offText': string;
+    'onText': string;
+  }
+  interface BubbleCheckboxAttributes extends StencilHTMLAttributes {
+    'color'?: string;
+    'offText'?: string;
+    'onText'?: string;
+  }
+
   interface InputTag {
     'color': string;
     'placeholder': string;
@@ -47,6 +58,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'BubbleCheckbox': Components.BubbleCheckbox;
     'InputTag': Components.InputTag;
     'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
@@ -54,12 +66,19 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'bubble-checkbox': Components.BubbleCheckboxAttributes;
     'input-tag': Components.InputTagAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
+
+  interface HTMLBubbleCheckboxElement extends Components.BubbleCheckbox, HTMLStencilElement {}
+  var HTMLBubbleCheckboxElement: {
+    prototype: HTMLBubbleCheckboxElement;
+    new (): HTMLBubbleCheckboxElement;
+  };
 
   interface HTMLInputTagElement extends Components.InputTag, HTMLStencilElement {}
   var HTMLInputTagElement: {
@@ -86,6 +105,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'bubble-checkbox': HTMLBubbleCheckboxElement
     'input-tag': HTMLInputTagElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
@@ -93,6 +113,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'bubble-checkbox': HTMLBubbleCheckboxElement;
     'input-tag': HTMLInputTagElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
