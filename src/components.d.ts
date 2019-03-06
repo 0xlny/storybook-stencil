@@ -30,15 +30,6 @@ export namespace Components {
     'placeholder'?: string;
   }
 
-  interface LoadingIndicator {
-    'color': string;
-    'text': string;
-  }
-  interface LoadingIndicatorAttributes extends StencilHTMLAttributes {
-    'color'?: string;
-    'text'?: string;
-  }
-
   interface SliderComponent {
     'color': string;
     'max': number;
@@ -58,7 +49,6 @@ declare global {
   interface StencilElementInterfaces {
     'FillButton': Components.FillButton;
     'InputTag': Components.InputTag;
-    'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
@@ -66,7 +56,6 @@ declare global {
   interface StencilIntrinsicElements {
     'fill-button': Components.FillButtonAttributes;
     'input-tag': Components.InputTagAttributes;
-    'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
@@ -84,12 +73,6 @@ declare global {
     new (): HTMLInputTagElement;
   };
 
-  interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
-  var HTMLLoadingIndicatorElement: {
-    prototype: HTMLLoadingIndicatorElement;
-    new (): HTMLLoadingIndicatorElement;
-  };
-
   interface HTMLSliderComponentElement extends Components.SliderComponent, HTMLStencilElement {}
   var HTMLSliderComponentElement: {
     prototype: HTMLSliderComponentElement;
@@ -105,7 +88,6 @@ declare global {
   interface HTMLElementTagNameMap {
     'fill-button': HTMLFillButtonElement
     'input-tag': HTMLInputTagElement
-    'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
@@ -113,7 +95,6 @@ declare global {
   interface ElementTagNameMap {
     'fill-button': HTMLFillButtonElement;
     'input-tag': HTMLInputTagElement;
-    'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;
   }
