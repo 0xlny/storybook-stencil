@@ -7,6 +7,21 @@ storiesOf('Welcome', module)
     return document.createElement('welcome-component');
   });
 
+storiesOf('Buttons', module)
+  .add('gradient', () => {
+    const compo = document.createElement('gradient-button');
+    //Those are for position in storybook
+    compo.style.setProperty('margin-left', '50px');
+    compo.style.setProperty('margin-top', '50px');
+    compo.style.setProperty('position', 'absolute');
+
+    //Those are default values
+    compo.setAttribute('color', '#4776E6');
+    compo.setAttribute('colorHover', '#e5b2ca');
+    compo.setAttribute('text', 'Sign up');
+    return compo;
+  });
+
 storiesOf('Sliders', module)
   .add('normal', () => {
     const compo = document.createElement('slider-component');

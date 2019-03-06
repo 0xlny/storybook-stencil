@@ -12,6 +12,7 @@ import '@stencil/core';
 
 export namespace Components {
 
+<<<<<<< HEAD
   interface FillButton {
     'color': string;
     'title': string;
@@ -19,6 +20,17 @@ export namespace Components {
   interface FillButtonAttributes extends StencilHTMLAttributes {
     'color'?: string;
     'title'?: string;
+=======
+  interface GradientButton {
+    'color': string;
+    'colorHover': string;
+    'text': string;
+  }
+  interface GradientButtonAttributes extends StencilHTMLAttributes {
+    'color'?: string;
+    'colorHover'?: string;
+    'text'?: string;
+>>>>>>> gradient_button
   }
 
   interface InputTag {
@@ -47,24 +59,39 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+<<<<<<< HEAD
     'FillButton': Components.FillButton;
+=======
+    'GradientButton': Components.GradientButton;
+>>>>>>> gradient_button
     'InputTag': Components.InputTag;
     'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
 
   interface StencilIntrinsicElements {
+<<<<<<< HEAD
     'fill-button': Components.FillButtonAttributes;
+=======
+    'gradient-button': Components.GradientButtonAttributes;
+>>>>>>> gradient_button
     'input-tag': Components.InputTagAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
 
 
+<<<<<<< HEAD
   interface HTMLFillButtonElement extends Components.FillButton, HTMLStencilElement {}
   var HTMLFillButtonElement: {
     prototype: HTMLFillButtonElement;
     new (): HTMLFillButtonElement;
+=======
+  interface HTMLGradientButtonElement extends Components.GradientButton, HTMLStencilElement {}
+  var HTMLGradientButtonElement: {
+    prototype: HTMLGradientButtonElement;
+    new (): HTMLGradientButtonElement;
+>>>>>>> gradient_button
   };
 
   interface HTMLInputTagElement extends Components.InputTag, HTMLStencilElement {}
@@ -86,14 +113,22 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+<<<<<<< HEAD
     'fill-button': HTMLFillButtonElement
+=======
+    'gradient-button': HTMLGradientButtonElement
+>>>>>>> gradient_button
     'input-tag': HTMLInputTagElement
     'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
 
   interface ElementTagNameMap {
+<<<<<<< HEAD
     'fill-button': HTMLFillButtonElement;
+=======
+    'gradient-button': HTMLGradientButtonElement;
+>>>>>>> gradient_button
     'input-tag': HTMLInputTagElement;
     'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;
