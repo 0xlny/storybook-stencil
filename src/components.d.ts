@@ -14,15 +14,13 @@ export namespace Components {
 
   interface GradientButton {
     'color': string;
-    'height': string;
+    'colorHover': string;
     'text': string;
-    'width': string;
   }
   interface GradientButtonAttributes extends StencilHTMLAttributes {
     'color'?: string;
-    'height'?: string;
+    'colorHover'?: string;
     'text'?: string;
-    'width'?: string;
   }
 
   interface InputTag {
@@ -32,15 +30,6 @@ export namespace Components {
   interface InputTagAttributes extends StencilHTMLAttributes {
     'color'?: string;
     'placeholder'?: string;
-  }
-
-  interface LoadingIndicator {
-    'color': string;
-    'text': string;
-  }
-  interface LoadingIndicatorAttributes extends StencilHTMLAttributes {
-    'color'?: string;
-    'text'?: string;
   }
 
   interface SliderComponent {
@@ -62,7 +51,6 @@ declare global {
   interface StencilElementInterfaces {
     'GradientButton': Components.GradientButton;
     'InputTag': Components.InputTag;
-    'LoadingIndicator': Components.LoadingIndicator;
     'SliderComponent': Components.SliderComponent;
     'WelcomeComponent': Components.WelcomeComponent;
   }
@@ -70,7 +58,6 @@ declare global {
   interface StencilIntrinsicElements {
     'gradient-button': Components.GradientButtonAttributes;
     'input-tag': Components.InputTagAttributes;
-    'loading-indicator': Components.LoadingIndicatorAttributes;
     'slider-component': Components.SliderComponentAttributes;
     'welcome-component': Components.WelcomeComponentAttributes;
   }
@@ -88,12 +75,6 @@ declare global {
     new (): HTMLInputTagElement;
   };
 
-  interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
-  var HTMLLoadingIndicatorElement: {
-    prototype: HTMLLoadingIndicatorElement;
-    new (): HTMLLoadingIndicatorElement;
-  };
-
   interface HTMLSliderComponentElement extends Components.SliderComponent, HTMLStencilElement {}
   var HTMLSliderComponentElement: {
     prototype: HTMLSliderComponentElement;
@@ -109,7 +90,6 @@ declare global {
   interface HTMLElementTagNameMap {
     'gradient-button': HTMLGradientButtonElement
     'input-tag': HTMLInputTagElement
-    'loading-indicator': HTMLLoadingIndicatorElement
     'slider-component': HTMLSliderComponentElement
     'welcome-component': HTMLWelcomeComponentElement
   }
@@ -117,7 +97,6 @@ declare global {
   interface ElementTagNameMap {
     'gradient-button': HTMLGradientButtonElement;
     'input-tag': HTMLInputTagElement;
-    'loading-indicator': HTMLLoadingIndicatorElement;
     'slider-component': HTMLSliderComponentElement;
     'welcome-component': HTMLWelcomeComponentElement;
   }

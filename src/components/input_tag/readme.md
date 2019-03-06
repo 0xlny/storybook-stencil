@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `color`  | `color`   |             | `string` | `'#9880ff'` |
+| Property      | Attribute     | Description | Type     | Default     |
+| ------------- | ------------- | ----------- | -------- | ----------- |
+| `color`       | `color`       |             | `string` | `'#9880ff'` |
+| `placeholder` | `placeholder` |             | `string` | `'Tags...'` |
 
 
 ----------------------------------------------

@@ -8,24 +8,20 @@ import '@polymer/iron-icons/iron-icons.js';
   shadow: true
 })
 export class GradientButton {
-
-  @Prop() height: string = '50px';
-  @Prop() width: string = '100px';
-  @Prop() color: string = '#9880ff';
-  @Prop() text: string = 'Follow';
+  @Prop() color: string = '#4776E6';
+  @Prop() colorHover: string = '#e5b2ca';
+  @Prop() text: string = 'Sign up';
   @Element() private element: HTMLElement;
-
 
   componentDidLoad(){
     const wrapper = this.element.shadowRoot.getElementById("gradient-button");
-    wrapper.style.setProperty('--button-height', this.height);
-    wrapper.style.setProperty('--button-width', this.width);
     wrapper.style.setProperty('--color', this.color);
+    wrapper.style.setProperty('--colorHover', this.colorHover);
   }
 
   render() {
     return (
-      <div class="gradient-button">
+      <div class="gradient-button" id="gradient-button">
         <button>
           {this.text}
         </button>
